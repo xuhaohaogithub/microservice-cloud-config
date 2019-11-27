@@ -64,7 +64,7 @@ eureka:
     registerWithEureka: true # 服务注册开关
     fetchRegistry: true # 服务发现开关
     serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
-      defaultZone: http://172.17.0.4:6001/eureka
+      defaultZone: http://172.17.0.7:6001/eureka
   instance:
     instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
     prefer-ip-address: true #访问路径就会显示成IP地址 
