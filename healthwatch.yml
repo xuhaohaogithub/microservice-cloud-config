@@ -4,7 +4,7 @@ spring:
     active: dev # 激活开发环境配置
 ---
 server:
-  port: 8001
+  port: 8002
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -37,7 +37,7 @@ eureka:
     prefer-ip-address: true #访问路径就会显示成IP地址 
 ---
 server:
-  port: 8001
+  port: 8002
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -70,7 +70,7 @@ eureka:
     prefer-ip-address: true #访问路径就会显示成IP地址 
 ---
 server:
-  port: 8001
+  port: 8002
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
