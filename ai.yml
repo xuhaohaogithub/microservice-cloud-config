@@ -1,7 +1,7 @@
 #注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
 spring:
   profiles:
-    active: dev # 激活开发环境配置
+    active: test # 激活开发环境配置
 ---
 server:
   port: 8003
@@ -58,7 +58,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://172.17.0.2:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
+    url: jdbc:mysql://172.17.0.3:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
     username: root
     password: root
     dbcp2:
