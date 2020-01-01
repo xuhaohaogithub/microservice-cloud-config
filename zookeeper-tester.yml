@@ -1,0 +1,51 @@
+#注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
+spring:
+  profiles:
+    active: dev # 激活开发环境配置
+---
+server:
+  port: 6003
+
+spring:
+  profiles: dev
+  application:
+    name: baihe-server-zookeeper #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+management:
+  security:
+    enabled: false
+
+---
+server:
+  port: 6003
+
+spring:
+  profiles: test
+  application:
+    name: baihe-server-zookeeper #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+management:
+  security:
+    enabled: false
+
+---
+server:
+  port: 6003
+
+spring:
+  profiles: prod
+  application:
+    name: baihe-server-zookeeper #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+  cloud:
+    zookeeper:
+    connect-string: localhost:2181
+
+management:
+  security:
+    enabled: false
