@@ -31,7 +31,7 @@ zuul:
       #如果多个服务需要经过路由，则同provider-product方式继续添加
 ---
 server:
-  port: 7001
+  port: 80
 
 spring:
   profiles: test
@@ -58,7 +58,7 @@ zuul:
       #如果多个服务需要经过路由，则同provider-product方式继续添加
 ---
 server:
-  port: 7001
+  port: 80
 
 spring:
   profiles: prod
