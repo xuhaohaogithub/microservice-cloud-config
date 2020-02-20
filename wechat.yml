@@ -4,7 +4,7 @@ spring:
     active: dev # 激活开发环境配置
 ---
 server:
-  port: 8003
+  port: 8006
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -13,7 +13,7 @@ mybatis:
 spring:
   profiles: dev
   application:
-    name: baihe-server-ai #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: baihe-server-wechat #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
@@ -25,27 +25,10 @@ spring:
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
-    mode: LEGACYHTML5
-    servlet:
-      content-type: text/html
-    encoding: utf-8
-    cache: false
 
-eureka:
-  client:
-    registerWithEureka: true # 服务注册开关
-    fetchRegistry: true # 服务发现开关
-    serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
-      defaultZone: http://eureka6001.com:6001/eureka/
-  instance:
-    instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
-    prefer-ip-address: true #访问路径就会显示成IP地址 
 ---
 server:
-  port: 8003
+  port: 8006
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -54,7 +37,7 @@ mybatis:
 spring:
   profiles: test
   application:
-    name: baihe-server-ai #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: baihe-server-wechat #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
@@ -66,27 +49,10 @@ spring:
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
-    mode: LEGACYHTML5
-    servlet:
-      content-type: text/html
-    encoding: utf-8
-    cache: false
 
-eureka:
-  client:
-    registerWithEureka: true # 服务注册开关
-    fetchRegistry: true # 服务发现开关
-    serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
-      defaultZone: http://172.17.0.5:6001/eureka
-  instance:
-    instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
-    prefer-ip-address: true #访问路径就会显示成IP地址
 ---
 server:
-  port: 8003
+  port: 8006
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -95,7 +61,7 @@ mybatis:
 spring:
   profiles: prod
   application:
-    name: baihe-server-ai #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: baihe-server-wechat #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
@@ -107,14 +73,3 @@ spring:
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
-
-eureka:
-  client:
-    registerWithEureka: true # 服务注册开关
-    fetchRegistry: true # 服务发现开关
-    serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
-      #defaultZone: http://localhost:6001/eureka,linux上配置ip域名映射
-      #defaultZone: http://172.17.0.4:6001/eureka
-  instance:
-    instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
-    prefer-ip-address: true #访问路径就会显示成IP地址
