@@ -1,10 +1,10 @@
 #注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
 spring:
   profiles:
-    active: test # 激活开发环境配置
+    active: dev # 激活开发环境配置
 ---
 server:
-  port: 8003
+  port: 8007
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -13,7 +13,7 @@ mybatis:
 spring:
   profiles: dev
   application:
-    name: baihe-server-ai #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: baihe-server-surveymanager #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
@@ -25,18 +25,10 @@ spring:
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
-    mode: LEGACYHTML5
-    servlet:
-      content-type: text/html
-    encoding: utf-8
-    cache: false
 
 ---
 server:
-  port: 8003
+  port: 8007
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -45,11 +37,11 @@ mybatis:
 spring:
   profiles: test
   application:
-    name: baihe-server-ai #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: baihe-server-surveymanager #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://172.17.0.3:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
+    url: jdbc:mysql://172.17.0.2:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
     username: root
     password: root
     dbcp2:
@@ -57,18 +49,10 @@ spring:
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
-    mode: LEGACYHTML5
-    servlet:
-      content-type: text/html
-    encoding: utf-8
-    cache: false
 
 ---
 server:
-  port: 8003
+  port: 8007
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -77,7 +61,7 @@ mybatis:
 spring:
   profiles: prod
   application:
-    name: baihe-server-ai #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: baihe-server-surveymanager #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
