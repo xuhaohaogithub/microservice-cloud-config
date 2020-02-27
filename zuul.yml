@@ -24,10 +24,21 @@ eureka:
 
 zuul:
   routes:
-    app-surveymanager:
+    baiheintelligent:
+      path: /baiheintelligent/**
+      serviceId: baihe-server-baiheintelligent
+    healthwatch:
+      path: /healthwatch/**
+      serviceId: baihe-server-healthwatch
+    wechat:
+      path: /wechat/**
+      serviceId: baihe-server-wechat
+    ai:
+      path: /nlp/**
+      serviceId: baihe-server-ai
+    surveymanager:
       path: /surveymanager/**
-      serviceId: BAIHE-SERVER-SURVEYMANAGER
-      stripPrefix: false
+      serviceId: baihe-server-surveymanager
 ---
 server:
   port: 80
