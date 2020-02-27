@@ -24,26 +24,26 @@ eureka:
 
 zuul:
   routes:
-    #baiheintelligent:
-      #path: /app/baiheintelligent/**
-      #serviceId: baihe-server-baiheintelligent
-      #stripPrefix: false
-    #healthwatch:
-      #path: /app/healthwatch/**
-      #serviceId: baihe-server-healthwatch
-      #stripPrefix: false
-    #wechat:
-      #path: /wechat/**
-      #serviceId: baihe-server-wechat
-      #stripPrefix: false
+    baiheintelligent:
+      path: /app/baiheintelligent/**
+      service-id: baihe-server-baiheintelligent
+      stripPrefix: false
+    healthwatch:
+      path: /app/healthwatch/**
+      service-id: baihe-server-healthwatch
+      stripPrefix: false
+    wechat:
+      path: /wechat/**
+      service-id: baihe-server-wechat
+      stripPrefix: false
     ai:
       path: /nlp/**
-      serviceId: baihe-server-ai
+      service-id: baihe-server-ai
       stripPrefix: false
-    #surveymanager:
-      #path: /app/surveymanager/**
-      #serviceId: baihe-server-surveymanager
-      #stripPrefix: false
+    surveymanager:
+      path: /app/surveymanager/**
+      service-id: baihe-server-surveymanager
+      stripPrefix: false
 ---
 server:
   port: 80
