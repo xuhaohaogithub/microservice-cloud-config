@@ -26,23 +26,23 @@ zuul:
   routes:
     baiheintelligent:
       path: /baiheintelligent/**
-      service-id: baihe-server-baiheintelligent
+      serviceId: baihe-server-baiheintelligent
       stripPrefix: false
     healthwatch:
       path: /healthwatch/**
-      service-id: baihe-server-healthwatch
+      serviceId: baihe-server-healthwatch
       stripPrefix: false
     wechat:
       path: /wechat/**
-      service-id: baihe-server-wechat
+      serviceId: baihe-server-wechat
       stripPrefix: false
     ai:
       path: /nlp/**
-      service-id: baihe-server-ai
+      serviceId: baihe-server-ai
       stripPrefix: false
     surveymanager:
       path: /surveymanager/**
-      service-id: baihe-server-surveymanager
+      serviceId: baihe-server-surveymanager
       stripPrefix: false
 ---
 server:
