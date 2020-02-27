@@ -24,23 +24,7 @@ eureka:
 
 zuul:
   routes:
-    baiheintelligent:
-      path: /baiheintelligent/**
-      serviceId: baihe-server-baiheintelligent
-      stripPrefix: false
-    healthwatch:
-      path: /healthwatch/**
-      serviceId: baihe-server-healthwatch
-      stripPrefix: false
-    wechat:
-      path: /wechat/**
-      serviceId: baihe-server-wechat
-      stripPrefix: false
-    ai:
-      path: /nlp/**
-      serviceId: baihe-server-ai
-      stripPrefix: false
-    surveymanager:
+    app-surveymanager:
       path: /surveymanager/**
       serviceId: baihe-server-surveymanager
       stripPrefix: false
