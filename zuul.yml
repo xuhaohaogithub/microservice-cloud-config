@@ -36,11 +36,11 @@ zuul:
       path: /wechat/**
       serviceId: baihe-server-wechat
       stripPrefix: false
-    baiheintelligent:
+    ai:
       path: /nlp/**
       serviceId: baihe-server-ai
       stripPrefix: false
-    baiheintelligent:
+    surveymanager:
       path: /app/surveymanager/**
       serviceId: baihe-server-surveymanager
       stripPrefix: false
