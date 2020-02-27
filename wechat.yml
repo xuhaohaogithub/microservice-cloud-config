@@ -1,10 +1,10 @@
 #注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
 spring:
   profiles:
-    active: test # 激活开发环境配置
+    active: dev # 激活开发环境配置
 ---
 server:
-  port: 80
+  port: 8006
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -26,9 +26,19 @@ spring:
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
 
+eureka:
+  client:
+    registerWithEureka: true # 服务注册开关
+    fetchRegistry: true # 服务发现开关
+    serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
+      defaultZone: http://eureka6001.com:6001/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
+    prefer-ip-address: true #访问路径就会显示成IP地址 
+
 ---
 server:
-  port: 80
+  port: 8006
 
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
@@ -49,6 +59,16 @@ spring:
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
+
+eureka:
+  client:
+    registerWithEureka: true # 服务注册开关
+    fetchRegistry: true # 服务发现开关
+    serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
+      defaultZone: http://${ip-address}:6001/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
+    prefer-ip-address: true #访问路径就会显示成IP地址 
 
 ---
 server:
