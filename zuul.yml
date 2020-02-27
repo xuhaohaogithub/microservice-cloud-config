@@ -24,11 +24,26 @@ eureka:
 
 zuul:
   routes:
-    provider-product:
-      path: /quantification/**
+    baiheintelligent:
+      path: /app/baiheintelligent/**
       serviceId: baihe-server-baiheintelligent
       stripPrefix: false
-      #如果多个服务需要经过路由，则同provider-product方式继续添加
+    healthwatch:
+      path: /app/healthwatch/**
+      serviceId: baihe-server-healthwatch
+      stripPrefix: false
+    wechat:
+      path: /wechat/**
+      serviceId: baihe-server-wechat
+      stripPrefix: false
+    baiheintelligent:
+      path: /nlp/**
+      serviceId: baihe-server-ai
+      stripPrefix: false
+    baiheintelligent:
+      path: /app/surveymanager/**
+      serviceId: baihe-server-surveymanager
+      stripPrefix: false
 ---
 server:
   port: 80
