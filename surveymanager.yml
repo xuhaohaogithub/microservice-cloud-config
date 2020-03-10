@@ -6,7 +6,7 @@ spring:
 server:
   port: 8007
 
-mybatis-plus:
+mybatis:
   mapper-locations: classpath*:com.baihe.server.mapper/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.entity
 
