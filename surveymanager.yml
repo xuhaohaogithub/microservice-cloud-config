@@ -8,7 +8,7 @@ server:
 
 mybatis-plus:
   mapper-locations: ["classpath*:mappers/**/*Mapper.xml"]       # mapper映射文件
-  type-aliases-package: com.baihe.server.entity
+  #type-aliases-package: com.baihe.server.entity
   # 以下配置均有默认值,可以不设置
   global-config:
     db-config:
