@@ -6,12 +6,9 @@ spring:
 server:
   port: 8007
 
-mybatis-plus:
+mybatis:
   mapper-locations: classpath*:mappers/**/*Mapper.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.entity
-  global-config:
-    db-config:
-      id-type: AUTO
 
 spring:
   profiles: dev
