@@ -9,6 +9,22 @@ server:
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.entity
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+      #数据库类型
+      db-type: MYSQL
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 spring:
   profiles: dev
@@ -43,6 +59,15 @@ server:
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.entity
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+      #数据库类型
+      db-type: MYSQL
 
 spring:
   profiles: test
@@ -51,7 +76,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://172.17.0.3:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
+    url: jdbc:mysql://172.17.0.2:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
     username: root
     password: root
     dbcp2:
@@ -65,7 +90,7 @@ eureka:
     registerWithEureka: true # 服务注册开关
     fetchRegistry: true # 服务发现开关
     serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
-      defaultZone: http://${ip-address}:6001/eureka/
+      defaultZone: http://172.17.0.5:6001/eureka/
   instance:
     instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
     prefer-ip-address: true #访问路径就会显示成IP地址 
@@ -77,6 +102,15 @@ server:
 mybatis:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.entity
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+      #数据库类型
+      db-type: MYSQL
 
 spring:
   profiles: prod
@@ -85,11 +119,21 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://192.168.0.122:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
+    url: jdbc:mysql://?:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
     username: root
-    password: BandHagen88!@
+    password: admin12345
     dbcp2:
       min-idle: 5                                # 数据库连接池的最小维持连接数
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
+      
+eureka:
+  client:
+    registerWithEureka: true # 服务注册开关
+    fetchRegistry: true # 服务发现开关
+    serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
+      defaultZone: http://?:6001/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
+    prefer-ip-address: true #访问路径就会显示成IP地址
