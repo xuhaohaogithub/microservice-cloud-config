@@ -54,7 +54,7 @@ spring:
 
 eureka:
   instance:
-    hostname: ? # eureka服务端的实例名称
+    hostname: ${ip-address} # eureka服务端的实例名称
   client:
     registerWithEureka: false # 服务注册，false表示不将自已注册到Eureka服务中
     fetchRegistry: false # 服务发现，false表示自己不从Eureka服务中获取注册信息

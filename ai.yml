@@ -142,7 +142,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://?:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
+    url: jdbc:mysql://${ip-address}:3306/baihe?serverTimezone=GMT%2B8  # 数据库名称,db为jdk容器访问mysql容器指定的别名
     username: root
     password: admin12345
     dbcp2:
@@ -156,7 +156,7 @@ eureka:
     registerWithEureka: true # 服务注册开关
     fetchRegistry: true # 服务发现开关
     serviceUrl: # 注册到哪一个Eureka Server服务注册中心，多个中间用逗号分隔
-      defaultZone: http://?:6001/eureka/
+      defaultZone: http://${ip-address}:6001/eureka/
   instance:
     instanceId: ${spring.application.name}:${server.port} # 等价于baihe-server:8001
     prefer-ip-address: true #访问路径就会显示成IP地址 
