@@ -4,7 +4,7 @@ spring:
     active: dev # 激活开发环境配置
 ---
 server:
-  port: 6003 # 服务端口
+  port: 6001 # 服务端口
 spring:
   profiles: dev # 开发环境
   applications:
@@ -25,7 +25,7 @@ eureka:
     enable-self-preservation: false # 禁用自我保护机制
 ---
 server:
-  port: 6003 # 服务端口
+  port: 6001 # 服务端口
 spring:
   profiles: test # 开发环境
   applications:
@@ -46,7 +46,7 @@ eureka:
     enable-self-preservation: false # 禁用自我保护机制
 ---
 server:
-  port: 6003 # 服务端口
+  port: 6001 # 服务端口
 spring:
   profiles: prod # 开发环境
   applications:
