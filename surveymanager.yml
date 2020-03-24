@@ -139,7 +139,7 @@ spring:
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
   redis:
     database: 0
-    host: ?
+    host: ${ip-address}
     port: 6379
     password:
     
