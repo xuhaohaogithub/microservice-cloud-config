@@ -1,13 +1,13 @@
 #注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
 spring:
   profiles:
-    active: test # 激活开发环境配置
+    active: dev # 激活开发环境配置
 ---
 server:
   port: 8007
 
 mybatis-plus:
-  mapper-locations: ["classpath*:com.baihe.server.mappers/**/*Mapper.xml"]       # mapper映射文件
+  mapper-locations: ["classpath*:com.baihe.server.mapper/**/*Mapper.xml"]       # mapper映射文件
   type-aliases-package: com.baihe.server.po.surveymanager
   # 以下配置均有默认值,可以不设置
   global-config:
@@ -62,7 +62,7 @@ server:
   port: 8007
 
 mybatis:
-  mapper-locations: ["classpath*:mappers/**/*Mapper.xml"]       # mapper映射文件
+  mapper-locations: ["classpath*:com.baihe.server.mapper/**/*Mapper.xml"]       # mapper映射文件
   type-aliases-package: com.baihe.server.po.surveymanager
   # 以下配置均有默认值,可以不设置
   global-config:
@@ -110,7 +110,7 @@ server:
   port: 8007
 
 mybatis:
-  mapper-locations: ["classpath*:com.baihe.server.mappers/**/*Mapper.xml"]       # mapper映射文件
+  mapper-locations: ["classpath*:com.baihe.server.mapper/**/*Mapper.xml"]       # mapper映射文件
   type-aliases-package: com.baihe.server.po.surveymanager
   # 以下配置均有默认值,可以不设置
   global-config:
