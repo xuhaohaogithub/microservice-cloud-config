@@ -32,9 +32,6 @@ zuul:
     baiheintelligent:
       path: /baiheintelligent/**
       serviceId: baihe-server-baiheintelligent
-    healthwatch:
-      path: /healthwatch/**
-      serviceId: baihe-server-healthwatch
     wechat:
       path: /wechat/**
       serviceId: baihe-server-wechat
@@ -77,9 +74,6 @@ zuul:
     baiheintelligent:
       path: /baiheintelligent/**
       serviceId: baihe-server-baiheintelligent
-    healthwatch:
-      path: /healthwatch/**
-      serviceId: baihe-server-healthwatch
     wechat:
       path: /wechat/**
       serviceId: baihe-server-wechat
@@ -117,9 +111,6 @@ zuul:
     baiheintelligent:
       path: /baiheintelligent/**
       serviceId: baihe-server-baiheintelligent
-    healthwatch:
-      path: /healthwatch/**
-      serviceId: baihe-server-healthwatch
     wechat:
       path: /wechat/**
       serviceId: baihe-server-wechat
