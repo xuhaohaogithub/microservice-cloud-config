@@ -64,7 +64,7 @@ eureka:
 server:
   port: 8003
 
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.po.nlp
   # 以下配置均有默认值,可以不设置
@@ -122,7 +122,7 @@ eureka:
 server:
   port: 8003
 
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.po.nlp
   # 以下配置均有默认值,可以不设置

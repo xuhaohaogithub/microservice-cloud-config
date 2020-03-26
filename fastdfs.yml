@@ -6,7 +6,7 @@ spring:
 server:
   port: 8008
 
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.po.baiheintelligent
   # 以下配置均有默认值,可以不设置
@@ -55,7 +55,7 @@ eureka:
 server:
   port: 8008
 
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.po.baiheintelligent
   # 以下配置均有默认值,可以不设置
@@ -97,7 +97,7 @@ eureka:
 server:
   port: 8008
 
-mybatis:
+mybatis-plus:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
   type-aliases-package: com.baihe.server.po.baiheintelligent
   # 以下配置均有默认值,可以不设置

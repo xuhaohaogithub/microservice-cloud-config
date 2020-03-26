@@ -61,7 +61,7 @@ eureka:
 server:
   port: 8007
 
-mybatis:
+mybatis-plus:
   mapper-locations: ["classpath*:com.baihe.server.mapper/**/*Mapper.xml"]       # mapper映射文件
   type-aliases-package: com.baihe.server.po.surveymanager
   # 以下配置均有默认值,可以不设置
@@ -109,7 +109,7 @@ eureka:
 server:
   port: 8007
 
-mybatis:
+mybatis-plus:
   mapper-locations: ["classpath*:com.baihe.server.mapper/**/*Mapper.xml"]       # mapper映射文件
   type-aliases-package: com.baihe.server.po.surveymanager
   # 以下配置均有默认值,可以不设置
