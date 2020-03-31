@@ -1,7 +1,7 @@
 #注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
 spring:
   profiles:
-    active: dev # 激活开发环境配置
+    active: prod # 激活开发环境配置
 ---
 server:
   port: 6001 # 服务端口
@@ -54,7 +54,7 @@ spring:
 
 eureka:
   instance:
-    hostname: ${ip-address} # eureka服务端的实例名称
+    hostname: 172.17.0.3 # eureka服务端的实例名称
   client:
     registerWithEureka: false # 服务注册，false表示不将自已注册到Eureka服务中
     fetchRegistry: false # 服务发现，false表示自己不从Eureka服务中获取注册信息
