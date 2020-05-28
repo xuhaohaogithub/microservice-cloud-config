@@ -104,6 +104,11 @@ spring:
   profiles: prod
   application:
     name: baihe-server-zuul-gateway #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+  redis:
+    database: 0
+    host: 172.17.0.10
+    port: 6379
+    password:
 
 eureka:
   client:
