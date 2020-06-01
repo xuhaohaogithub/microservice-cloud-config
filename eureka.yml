@@ -23,6 +23,9 @@ eureka:
       #defaultZone: http://eureka6002:6002/eureka/
   server:
     enable-self-preservation: false # 禁用自我保护机制
+logging:
+  level:
+    root: info
 ---
 server:
   port: 6001 # 服务端口
