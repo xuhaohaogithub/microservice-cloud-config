@@ -4,7 +4,7 @@ spring:
     active: dev # 激活开发环境配置
 ---
 server:
-  port: 8006
+  port: 8106
 
 mybatis-plus:
   mapper-locations: classpath*:mappers/**/*.xml       # mapper映射文件
