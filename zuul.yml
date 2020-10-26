@@ -147,6 +147,10 @@ zuul:
     fastdfs:
       path: /fastdfs/**
       serviceId: baihe-server-fastdfs
+      
+ribbon:
+  ReadTimeout: 40000
+  ConnectTimeout: 40000
   
 hystrix:
   command:
