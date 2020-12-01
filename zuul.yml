@@ -149,8 +149,8 @@ zuul:
       serviceId: baihe-server-fastdfs
       
 ribbon:
-  ReadTimeout: 600000
-  ConnectTimeout: 600000
+  ReadTimeout: 1200000
+  ConnectTimeout: 1200000
   
 hystrix:
   command:
@@ -158,4 +158,4 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 600000
+            timeoutInMilliseconds: 1200000
