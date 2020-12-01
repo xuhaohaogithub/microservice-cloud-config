@@ -158,4 +158,4 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 100000
+            timeoutInMilliseconds: 160000
