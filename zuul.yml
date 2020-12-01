@@ -130,7 +130,7 @@ eureka:
 zuul:
   host:
     connect-timeout-millis: 15000
-    socket-timeout-millis: 60000
+    socket-timeout-millis: 100000
   routes:
     baiheintelligent:
       path: /baiheintelligent/**
@@ -149,8 +149,8 @@ zuul:
       serviceId: baihe-server-fastdfs
       
 ribbon:
-  ReadTimeout: 40000
-  ConnectTimeout: 40000
+  ReadTimeout: 100000
+  ConnectTimeout: 100000
   
 hystrix:
   command:
@@ -158,4 +158,4 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 40000
+            timeoutInMilliseconds: 100000
